@@ -1,0 +1,5061 @@
+﻿* {
+    margin: 0px 4px 0 0px;
+    padding: 0;
+    color: teal;
+}
+
+body {
+    position: center;
+    background-color: beige;
+    font-family: Verdana, Arial;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0px 479px 0 0px;
+    width: 1200px;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+    display: none; /* 初始時隱藏 */
+}
+
+::-webkit-scrollbar {
+    width: 8px; /* 滾輪寬度 */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; /* 滾輪軌道的背景色 */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #808080; /* 滾輪滑塊的背景色 */
+}
+
+/* 滾輪滑塊的圓角 */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+
+.custom-image {
+    position: absolute; /*指定絕對位置*/
+    top: 30%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    image-rendering: pixelated; /* 設置畫質為 pixelated */
+}
+
+.custom-image2 {
+    position: absolute; /*指定絕對位置*/
+    top: 20%;
+    left: 50%;
+    width: 224px;
+    height: 150px;
+    transform: translate(-50%, -50%);
+    image-rendering: pixelated; /* 設置畫質為 pixelated */
+}
+
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .result-image {
+        position: absolute; /*指定絕對位置*/
+        top: 50%;
+        left: 50%;
+        width: 300px; /* 設置圖片寬度 */
+        height: 300px; /* 設置圖片高度 */
+        transform: translate(-50%, -50%);
+        image-rendering: pixelated; /* 設置畫質為 pixelated */
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .result-image {
+        position: absolute; /*指定絕對位置*/
+        top: 50%;
+        left: 50%;
+        width: 500px; /* 設置圖片寬度 */
+        height: 500px; /* 設置圖片高度 */
+        transform: translate(-50%, -50%);
+        image-rendering: pixelated; /* 設置畫質為 pixelated */
+    }
+}
+
+.ButtonStyle,
+.ButtonStyle:focus {
+    position: absolute; /*指定絕對位置*/
+    border: 3px solid teal;
+    border-radius: 4px;
+    background-color: transparent;
+    color: teal;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition-duration: 0.4s;
+}
+
+    .ButtonStyle:hover {
+        border: 3px solid #ffffff;
+        box-shadow: 0px 2px 10px 5px teal;
+        color: white;
+        background-color: lightseagreen;
+    }
+
+    .ButtonStyle:after {
+        content: "";
+        display: block;
+        position: absolute;
+        margin-left: -20px !important;
+        opacity: 0;
+        transition: all 0.8s
+    }
+
+    .ButtonStyle:active:after {
+        padding: 0;
+        margin: 0;
+        opacity: 1;
+        transition: 0s;
+    }
+
+.ButtonStylePick {
+    position: relative;
+    border: 3px solid #ffffff;
+    background-color: teal;
+    border-radius: 4px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    box-shadow: 0px 2px 10px 5px teal;
+}
+
+.ButtonStyle2,
+.ButtonStyle2:focus {
+    position: relative;
+    border: 3px solid #301305;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #301305;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition-duration: 0.4s;
+}
+
+    .ButtonStyle2:hover {
+        border: 3px solid #ffffff;
+        box-shadow: 0px 2px 10px 5px #301305;
+        color: white;
+    }
+
+    .ButtonStyle2:after {
+        content: "";
+        display: block;
+        position: absolute;
+        margin-left: -20px !important;
+        opacity: 0;
+        transition: all 0.8s
+    }
+
+    .ButtonStyle2:active:after {
+        padding: 0;
+        margin: 0;
+        opacity: 1;
+        transition: 0s;
+    }
+
+.ButtonStyle3,
+.ButtonStyle3:focus {
+    position: relative;
+    border: 3px solid teal;
+    border-radius: 4px;
+    background-color: transparent;
+    color: teal;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition-duration: 0.4s;
+}
+
+    .ButtonStyle3:hover {
+        border: 3px solid #ffffff;
+        box-shadow: 0px 2px 10px 5px teal;
+        color: white;
+        background-color: lightseagreen;
+    }
+
+/* 禁用效果 */
+.DisabledButtonStyle {
+    /* 在这里定义禁用时的样式 */
+    pointer-events: none; /* 禁用点击事件 */
+}
+
+.ButtonStyle3:after {
+    content: "";
+    display: block;
+    position: absolute;
+    margin-left: -20px !important;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.ButtonStyle3:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;
+}
+
+.ButtonStylePick {
+    position: relative;
+    border: 3px solid #ffffff;
+    background-color: teal;
+    border-radius: 4px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    box-shadow: 0px 2px 10px 5px teal;
+}
+
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .ButtonSize1 { /* 按鈕大小(較寬) */
+        width: 80px;
+        height: 25px;
+        font-size: 15px;
+    }
+
+    .ButtonSize2 { /* 按鈕大小(較窄) */
+        width: 72px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .ButtonSize3 { /* 按鈕大小(小方塊) */
+        width: 40px;
+        height: 30px;
+        font-size: 15px;
+    }
+
+    .ButtonSize4 { /* 按鈕大小(2變長) */
+        width: 100px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .ButtonSize5 { /* 按鈕大小(正方) */
+        width: 30px;
+        height: 30px;
+    }
+
+    .IntButton { /* 按鈕大小(較寬) */
+        width: 100px;
+        height: 25px;
+        font-size: 15px;
+    }
+
+    .TextBoxStyle, #Start { /* 輸入欄樣式 (+記帳日期) */
+        width: 120px;
+        height: 25px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+        box-shadow: 1px 1px 3px gray;
+    }
+
+    .DropDownStyle { /* 下拉式選單樣式 */
+        width: 70px;
+        height: 30px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+        box-shadow: 1px 1px 3px gray;
+    }
+
+    .DropDownStyle2 { /* 下拉式選單樣式 */
+        width: 50px;
+        height: 30px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+        box-shadow: 1px 1px 3px gray;
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .ButtonSize1 { /* 按鈕大小(較寬) */
+        width: 150px;
+        height: 40px;
+    }
+
+    .ButtonSize2 { /* 按鈕大小(較窄) */
+        width: 120px;
+        height: 60px;
+    }
+
+    .ButtonSize3 { /* 按鈕大小(小方塊) */
+        width: 50px;
+        height: 40px;
+    }
+
+    .ButtonSize4 { /* 按鈕大小(2變長) */
+        width: 120px;
+        height: 60px;
+    }
+
+    .ButtonSize5 { /* 按鈕大小(正方) */
+        width: 50px;
+        height: 50px;
+    }
+
+    .IntButton { /* 按鈕大小(較寬) */
+        width: 150px;
+        height: 35px;
+    }
+
+    .TextBoxStyle, #Start { /* 輸入欄樣式 (+記帳日期) */
+        width: 150px;
+        height: 25px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+        box-shadow: 1px 1px 3px gray;
+    }
+
+    .DropDownStyle { /* 下拉式選單樣式 */
+        width: 70px;
+        height: 30px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+        box-shadow: 1px 1px 3px gray;
+    }
+
+    .DropDownStyle2 { /* 下拉式選單樣式 */
+        width: 70px;
+        height: 30px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+        box-shadow: 1px 1px 3px gray;
+    }
+}
+
+.Back { /* 返回按鈕 */
+    position: fixed;
+    bottom: 3px;
+    right: 6px;
+    height: 80px;
+    width: 80px;
+}
+/*--------------------------------主畫面---------------------------------------*/
+/* 手機*0.6 */
+@media only screen and (max-width: 1023px) {
+    .MainBody {
+        position: absolute;
+        background-image: url('images/main/home_bg.png');
+        background-size: 565.38px 473.688px;
+        height: 473.688px;
+        width: 565.38px;
+        background-repeat: no-repeat;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+        overflow-y: hidden;
+    }
+
+    #Closet { /* 更衣室 */
+        background-color: transparent;
+        background-image: url('images/main/home_clo_2.png');
+        background-size: 142.74px 320.58px;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        Height: 320.58px;
+        Width: 142.74px;
+        top: 52.5%;
+        left: 0%;
+        transform: translate(0, -50%);
+    }
+
+    #Wishes { /* 願望清單 */
+        background-color: transparent;
+        background-image: url('images/main/home_dre_2.png');
+        background-size: 117.334px 162.797px;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        Height: 162.797px; /* 原圖0.6倍 */
+        Width: 117.334px; /* 原圖0.6倍 */
+        top: 27%;
+        left: 37%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Ach { /* 成就 */
+        background-color: transparent;
+        background-image: url('images/main/home_ach_2.png');
+        background-size: 48.806px 81.566px;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        Height: 81.566px; /* 原圖0.6倍 */
+        Width: 48.806px; /* 原圖0.6倍 */
+        top: 21%;
+        left: 72%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Bookkeeping { /* 記帳 */
+        background-color: transparent;
+        background-image: url('images/main/home_boo_2.png');
+        background-size: 96.12px 51.84px;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        Height: 51.84px; /* 原圖0.6倍 */
+        Width: 96.12px; /* 原圖0.6倍 */
+        top: 58.5%;
+        left: 65%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Game { /* 小遊戲 */
+        background-color: transparent;
+        background-image: url('images/main/home_game_2.png');
+        background-size: 102.96px 163.8px;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        Height: 163.8px; /* 原圖0.6倍 */
+        Width: 102.96px; /* 原圖0.6倍 */
+        top: 53%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+    }
+
+    .MainPerson { /* 人物 */
+        position: absolute;
+        height: 345.6px;
+        width: 164.16px;
+        top: 62%;
+        left: 46%;
+        transform: translate(-50%, -50%);
+    }
+
+    #MainBody {
+        position: absolute;
+        height: 155.52px;
+        width: 133.92px;
+        top: 60%;
+        left: 50%;
+        transform: translate(-49%, -52%);
+    }
+
+    #MainHead {
+        position: absolute;
+        height: 183.168px;
+        width: 131.328px;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #MainPet {
+        position: absolute;
+        width: 108px;
+        height: 108px;
+        top: 68%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Pig { /* 撲滿 */
+        position: fixed;
+        bottom: 35px;
+        left: 0px;
+        Height: 104.7168px;
+        Width: 161.352px;
+    }
+
+    .PigText {
+        position: fixed;
+        bottom: 10px;
+        left: 15px;
+        font-size: 17.3px;
+        color: black;
+        font-weight: bold;
+    }
+
+    #Setting {
+        position: absolute;
+        Height: 61.884px;
+        Width: 185.328px;
+        top: 2%;
+        left: 0%;
+    }
+
+    #AvatarHead {
+        position: absolute;
+        Height: 52.92px;
+        Width: 52.92px;
+        top: 8.6%;
+        left: 5.6%;
+        border-radius: 98px;
+        transform: translate(-50%, -50%);
+    }
+
+    #NickName {
+        position: absolute;
+        top: 7.5%;
+        left: 10.7%;
+        border-radius: 98px;
+        font-size: 18px;
+        color: paleturquoise;
+        transform: translate(0, -50%);
+    }
+
+    #UId {
+        position: absolute;
+        top: 10.7%;
+        left: 10.8%;
+        border-radius: 98px;
+        font-size: 10px;
+        color: paleturquoise;
+        transform: translate(0, -50%);
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .MainBody {
+        position: absolute;
+        background-image: url('images/main/home_bg.png');
+        background-size: 837.6px 701.76px;
+        height: 701.76px;
+        width: 837.6px;
+        background-repeat: no-repeat;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+        overflow-y: hidden;
+    }
+
+    #Closet { /* 更衣室 */
+        background-color: transparent;
+        background-image: url('images/main/home_clo.png');
+        background-size: 204.96px 438.24px;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        Height: 438.24px; /* 原圖0.6倍 */
+        Width: 204.96px; /* 原圖0.6倍 */
+        top: 55%;
+        left: 0%;
+        transform: translate(0, -50%);
+    }
+
+        #Closet:hover {
+            background-image: url('images/main/home_clo_2.png');
+            background-size: 222.04px 498.68px;
+            border: none;
+            Height: 498.68px; /* 原圖0.65倍 */
+            Width: 222.04px; /* 原圖0.65倍 */
+            top: 55%;
+            left: 0%;
+        }
+
+    #Wishes { /* 願望清單 */
+        background-color: transparent;
+        background-image: url('images/main/home_dre.png');
+        background-size: 168.48px 182.4px;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        Height: 182.4px; /* 原圖0.6倍 */
+        Width: 168.48px; /* 原圖0.6倍 */
+        top: 30%;
+        left: 37%;
+        transform: translate(-50%, -50%);
+    }
+
+        #Wishes:hover {
+            background-image: url('images/main/home_dre_2.png');
+            background-size: 182.52px 253.24px;
+            border: none;
+            Height: 253.24px; /* 原圖0.65倍 */
+            Width: 182.52px; /* 原圖0.65倍 */
+            top: 27%;
+            left: 37%;
+        }
+
+    #Ach { /* 成就 */
+        background-color: transparent;
+        background-image: url('images/main/home_ach.png');
+        background-size: 58.56px 84.48px;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        Height: 84.48px; /* 原圖0.6倍 */
+        Width: 58.56px; /* 原圖0.6倍 */
+        top: 23%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+    }
+
+        #Ach:hover {
+            background-image: url('images/main/home_ach_2.png');
+            background-size: 75.92px 126.88px;
+            border: none;
+            Height: 126.88px; /* 原圖0.65倍 */
+            Width: 75.92px; /* 原圖0.65倍 */
+            top: 20.5%;
+            left: 70.8%;
+        }
+
+    #Bookkeeping { /* 記帳 */
+        background-color: transparent;
+        background-image: url('images/main/home_boo.png');
+        background-size: 128.16px 39.36px;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        Height: 39.36px; /* 原圖0.6倍 */
+        Width: 128.16px; /* 原圖0.6倍 */
+        top: 61%;
+        left: 65%;
+        transform: translate(-50%, -50%);
+    }
+
+        #Bookkeeping:hover {
+            background-image: url('images/main/home_boo_2.png');
+            background-size: 149.52px 80.64px;
+            border: none;
+            Height: 80.64px; /* 原圖0.7倍 */
+            Width: 149.52px; /* 原圖0.7倍 */
+            top: 58.8%;
+            left: 65.5%;
+        }
+
+    #Game { /* 小遊戲 */
+        background-color: transparent;
+        background-image: url('images/main/home_game.png');
+        background-size: 147.84px 206.4px;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        Height: 206.4px; /* 原圖0.6倍 */
+        Width: 147.84px; /* 原圖0.6倍 */
+        top: 55%;
+        left: 79%;
+        transform: translate(-50%, -50%);
+    }
+
+        #Game:hover {
+            background-image: url('images/main/home_game_2.png');
+            background-size: 160.16px 254.8px;
+            border: none;
+            Height: 254.8px; /* 原圖0.65倍 */
+            Width: 160.16px; /* 原圖0.65倍 */
+            top: 53%;
+            left: 79%;
+        }
+
+    .MainPerson { /* 人物 */
+        position: absolute;
+        height: 512px;
+        width: 243.2px;
+        top: 62%;
+        left: 46%;
+        transform: translate(-50%, -50%);
+    }
+
+    #MainBody {
+        position: absolute;
+        height: 230.4px;
+        width: 198.4px;
+        top: 60%;
+        left: 50%;
+        transform: translate(-49%, -52%);
+    }
+
+    #MainHead {
+        position: absolute;
+        height: 271.36px;
+        width: 194.56px;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #MainPet {
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        top: 68%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Pig { /* 撲滿 */
+        position: fixed;
+        bottom: 35px;
+        left: 0px;
+        Height: 155.136px;
+        Width: 239.04px;
+    }
+
+    .PigText {
+        position: fixed;
+        bottom: 10px;
+        left: 5px;
+        font-size: 25.6px;
+        color: black;
+        font-weight: bold;
+    }
+
+    #Setting {
+        position: absolute;
+        Height: 83.512px;
+        Width: 247.104px;
+        top: 2%;
+        left: 0%;
+    }
+
+    #AvatarHead {
+        position: absolute;
+        Height: 70.56px;
+        Width: 70.56px;
+        top: 7.95%;
+        left: 5.3%;
+        border-radius: 98px;
+        transform: translate(-50%, -50%);
+    }
+
+    #NickName {
+        position: absolute;
+        top: 7%;
+        left: 10.5%;
+        border-radius: 98px;
+        font-size: 23px;
+        color: paleturquoise;
+        transform: translate(0, -50%);
+    }
+
+    #UId {
+        position: absolute;
+        top: 10.2%;
+        left: 10.6%;
+        border-radius: 98px;
+        font-size: 11px;
+        color: paleturquoise;
+        transform: translate(0, -50%);
+    }
+}
+/*--------------------------------主畫面結束---------------------------------------*/
+/*-----------------------------------設定------------------------------------------*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .SetBody {
+        position: absolute;
+        height: 300px;
+        width: 540px;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+        overflow-y: hidden;
+    }
+
+    .SetForm {
+        position: absolute;
+        text-align: left;
+        padding: 24px;
+        background-color: #95CACA;
+        height: 300px;
+        width: 540px;
+        top: 50%;
+        left: 50%;
+        border-radius: 30px;
+        border: 5px;
+        border-style: solid;
+        font-size: 24px;
+        line-height: 42px;
+        font-weight: bold;
+        transform: translate(-50%, -50%);
+    }
+
+    .SetTitle {
+        font-size: 42px;
+        position: absolute;
+        top: 8%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .SetContent {
+        position: absolute;
+        top: 50%;
+        left: 8%;
+        transform: translate(0, -50%);
+    }
+
+    .Ava {
+        position: absolute;
+        width: 144px;
+        height: 144px;
+        top: 50%;
+        left: 78%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Xx {
+        font-size: 20px;
+        position: absolute;
+        top: 10%;
+        left: 93.5%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Logout, #GoBack {
+        position: absolute;
+        top: 90%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+    }
+
+    #EditOk {
+        position: absolute;
+        top: 90%;
+        left: 90%;
+        transform: translate(-50%, -50%);
+    }
+
+    .SetTextBoxStyle {
+        height: 24px;
+        width: 210px;
+        font-size: 24px;
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+        box-shadow: 1px 1px 3px gray;
+    }
+
+    .YearTextBox {
+        width: 60px;
+    }
+
+    .MonthDayTextBox {
+        width: 26px;
+    }
+
+    #Clear {
+        position: absolute;
+        top: 90%;
+        left: 77%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .SetBody {
+        position: absolute;
+        height: 500px;
+        width: 900px;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+        overflow-y: hidden;
+    }
+
+    .SetForm {
+        position: absolute;
+        text-align: left;
+        padding: 40px;
+        background-color: #95CACA;
+        height: 500px;
+        width: 900px;
+        top: 50%;
+        left: 50%;
+        border-radius: 30px;
+        border: 5px;
+        border-style: solid;
+        font-size: 40px;
+        line-height: 70px;
+        font-weight: bold;
+        transform: translate(-50%, -50%);
+    }
+
+    .SetTitle {
+        font-size: 70px;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .SetContent {
+        position: absolute;
+        top: 50%;
+        left: 8%;
+        transform: translate(0, -50%);
+    }
+
+    .Ava {
+        position: absolute;
+        width: 240px;
+        height: 240px;
+        top: 50%;
+        left: 78%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Xx {
+        font-size: 40px;
+        position: absolute;
+        top: 10%;
+        left: 93.5%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Logout, #GoBack {
+        position: absolute;
+        top: 90%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+    }
+
+    #EditOk {
+        position: absolute;
+        top: 90%;
+        left: 90%;
+        transform: translate(-50%, -50%);
+    }
+
+    .SetTextBoxStyle {
+        height: 40px;
+        width: 330px;
+        font-size: 40px;
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+        box-shadow: 1px 1px 3px gray;
+    }
+
+    .YearTextBox {
+        width: 90px;
+    }
+
+    .MonthDayTextBox {
+        width: 45px;
+    }
+
+    #Clear {
+        position: absolute;
+        top: 90%;
+        left: 77%;
+        transform: translate(-50%, -50%);
+    }
+}
+/*---------------------------------設定結束----------------------------------------*/
+/*--------------------------------登入、註冊---------------------------------------*/
+/*------------登入------------*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .LogBody {
+        position: absolute;
+        background-image: url('images/log_o_door.png');
+        background-size: 843px 420.48px;
+        width: 843px;
+        height: 420.48px;
+        background-repeat: no-repeat;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+    }
+
+    .LogForm {
+        position: absolute;
+        text-align: center;
+        padding: 20px;
+        top: 50%;
+        left: 50%;
+        width: 80%; /* 使用百分比宽度，以适应不同屏幕大小 */
+        max-width: 380px; /* 设置最大宽度，防止在大屏幕上过于拉伸 */
+        height: 330px;
+        transform: translate(-50%, -55%);
+    }
+
+    .LogTitle {
+        position: absolute;
+        top: 16%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 50px;
+    }
+
+    .LogText {
+        width: 350px;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .LogButton { /* 按鈕 */
+        position: absolute;
+        top: 83%;
+        left: 50%;
+        height: 80px;
+        width: 200px;
+        transform: translate(-50%, -50%);
+    }
+
+    .LogButton1 { /* 按鈕 */
+        transform: translate(-16%, -0%);
+    }
+
+    .LogButton2 { /* 按鈕 */
+        margin-top: 5px;
+        transform: translate(-16%, -0%);
+    }
+
+    .LogForgetPwd {
+        position: absolute;
+        top: 120%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+    }
+
+    #state {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .LogBody {
+        position: absolute;
+        background-image: url('images/log_o_door.png');
+        background-size: 1264px 630.72px;
+        width: 1264px;
+        height: 630.72px;
+        background-repeat: no-repeat;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+    }
+
+    .LogForm {
+        position: absolute;
+        text-align: center;
+        padding: 20px;
+        top: 50%;
+        left: 50%;
+        height: 500.72px;
+        width: 80%; /* 使用百分比宽度，以适应不同屏幕大小 */
+        max-width: 600px; /* 设置最大宽度，防止在大屏幕上过于拉伸 */
+        transform: translate(-50%, -55%);
+    }
+
+    .LogTitle {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 80px;
+    }
+
+    .LogText {
+        width: 350px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .LogButton { /* 按鈕 */
+        position: absolute;
+        top: 84%;
+        left: 50%;
+        height: 80px;
+        width: 200px;
+        transform: translate(-50%, -50%);
+    }
+
+    .LogButton1 { /* 按鈕 */
+        transform: translate(-16%, -0%);
+    }
+
+    .LogButton2 { /* 按鈕 */
+        margin-top: 10px;
+        transform: translate(-16%, -0%);
+    }
+
+    .LogForgetPwd {
+        position: absolute;
+        top: 120%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+    }
+
+    #state {
+        font-size: 20px;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+/*----------登入結束-----------*/
+/*----------忘記密碼-----------*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .ForgetPwdTitle {
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+    }
+
+    .ForgetPwdText {
+        position: absolute;
+        left: 50%;
+        top: 72%;
+        transform: translate(-50%, -50%);
+    }
+
+    .ForgetButton {
+        position: absolute;
+        left: 32%;
+        top: 67.5%;
+        width: 320px;
+        transform: translate(-50%, -50%);
+    }
+
+    .ForgetPwError {
+        font-size: 13px;
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .ForgetPwdTitle {
+        position: absolute;
+        left: 50%;
+        top: 15%;
+        transform: translate(-50%, -50%);
+        font-size: 60px;
+    }
+
+    .ForgetPwdText {
+        position: absolute;
+        left: 50%;
+        top: 65%;
+        transform: translate(-50%, -50%);
+    }
+
+    .ForgetButton {
+        position: absolute;
+        left: 50%;
+        top: 80%;
+        width: 320px;
+        transform: translate(-50%, -50%);
+    }
+
+    .ForgetPwError {
+        font-size: 15px;
+    }
+}
+/*--------忘記密碼結束---------*/
+/*------------註冊-------------*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .RegTitle {
+        position: absolute;
+        left: 50%;
+        top: 9%;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+    }
+
+    .RegText {
+        position: absolute;
+        left: 50%;
+        top: 70%;
+        transform: translate(-50%, -50%);
+    }
+
+    .RegTextBlock {
+        text-align: right;
+        width: 365px;
+        height: 400px;
+        font-size: 20px;
+    }
+
+    .RegButton {
+        position: absolute;
+        left: 50%;
+        top: 69%;
+        width: 320px;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .RegTitle {
+        position: absolute;
+        left: 50%;
+        top: 15%;
+        transform: translate(-50%, -50%);
+        font-size: 60px;
+    }
+
+    .RegText {
+        position: absolute;
+        left: 50%;
+        top: 65%;
+        transform: translate(-55%, -50%);
+    }
+
+    .RegTextBlock {
+        text-align: right;
+        width: 365px;
+        height: 400px;
+        font-size: 20px;
+    }
+
+    .RegButton {
+        position: absolute;
+        left: 50%;
+        top: 80%;
+        width: 320px;
+        transform: translate(-45%, -50%);
+    }
+}
+/*----------註冊結束-----------*/
+/*----------------------------登入、註冊結束----------------------------------*/
+/*----------------------------------記帳--------------------------------------*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .BookBody {
+        background-image: url('images/boo_bg.png');
+        background-size: 721.908px 497.376px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 93vh;
+    }
+
+    .BookContent { /* 記帳區塊 */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 675px;
+        height: 445px;
+        padding: 12px;
+        transform: translate(-33%, -28%);
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .BookBody {
+        background-image: url('images/boo_bg.png');
+        background-size: 875.04px 602.88px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 93vh;
+    }
+
+    .BookContent { /* 記帳區塊 */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 810px;
+        height: 540px;
+        padding: 20px;
+        transform: translate(-49%, -50%);
+    }
+}
+/*---------------記帳左---------------*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .BookLeft {
+        position: absolute;
+        top: 48.5%;
+        left: 50%;
+        width: 330px;
+        height: 468.6px;
+        transform: translate(-105%, -62%);
+    }
+
+    .BookDate { /* 記帳月份區塊 */
+        font-weight: bold;
+        height: 52.8px;
+        width: 220px;
+        text-align: center;
+        font-size: 16.5px;
+        position: absolute;
+        left: 50%;
+        top: 8%;
+        transform: translate(-50%, 50%);
+    }
+
+    .DateButtonSize { /* 記帳月份切換按鈕 */
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+    }
+
+    .BookTitleL { /* 功能標題 */
+        position: absolute;
+        font-size: 24px;
+        left: 50%;
+        top: 0%;
+        transform: translate(-50%, 50%);
+    }
+
+    .GButton {
+        border: none; /* 移除邊框 */
+        transition: transform 0.2s; /* 添加變換動畫效果 */
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        outline: none;
+    }
+
+        .GButton:hover {
+            transform: scale(1.2); /* 鼠標懸停時按鈕變大 1.2 倍 */
+            cursor: pointer; /* 變換游標形狀為手型 */
+        }
+
+    .BookTable { /* 記帳紀錄 */
+        position: absolute;
+        left: 50%;
+        top: 20%;
+        transform: translate(-50%, 0%);
+        height: 370px; /* 設定高度，使其出現滾動條 */
+        width: 330px;
+        overflow-y: scroll; /* 垂直滾動條 */
+    }
+
+    .BookTableReport { /* 記帳報表 */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+    }
+
+    table.Gridview {
+        width: 395px;
+        height: 80px;
+        margin-top: 5px;
+        border: none; /* 不要框線 */
+    }
+
+        table.Gridview tr {
+            text-align: center;
+            font-size: 15px;
+        }
+
+        table.Gridview th, table.Gridview td { /* 不要左右框線 */
+            border-left: none;
+            border-right: none;
+        }
+
+    table.Gridview2 {
+        width: 320.7px;
+        height: 80px;
+        border: none; /* 不要框線 */
+    }
+
+        table.Gridview2 tr {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        table.Gridview2 th, table.Gridview2 td { /* 不要左右框線 */
+            border-left: none;
+            border-right: none;
+        }
+
+    .BookTotal { /* 總收入、總支出 */
+        position: absolute;
+        bottom: 1%;
+        left: 50%;
+        width: 450px;
+        font-size: 25px;
+        text-align: center;
+        font-weight: bold;
+        transform: translate(-50%, -50%);
+    }
+
+    #NoRecordsLabel {
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        font-size: 25px;
+        font-weight: bold;
+        transform: translate(-45%, 0%);
+    }
+
+    #NoDataLabel {
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        font-size: 25px;
+        font-weight: bold;
+        transform: translate(-45%, 0%);
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .BookLeft {
+        position: absolute;
+        top: 48.5%;
+        left: 50%;
+        width: 400px;
+        height: 580px;
+        transform: translate(-105%, -49%);
+    }
+
+    .BookDate { /* 記帳月份區塊 */
+        font-weight: bold;
+        height: 64px;
+        width: 400px;
+        text-align: center;
+        font-size: 25px;
+        position: absolute;
+        left: 50%;
+        top: 12%;
+        transform: translate(-50%, 50%);
+    }
+
+    .DateButtonSize { /* 記帳月份切換按鈕 */
+        width: 25px;
+        height: 25px;
+        font-size: 15px;
+    }
+
+    .BookTitleL { /* 功能標題 */
+        position: absolute;
+        font-size: 32px;
+        left: 50%;
+        top: 1%;
+        transform: translate(-50%, 50%);
+    }
+
+    .GButton {
+        border: none; /* 移除邊框 */
+        transition: transform 0.2s; /* 添加變換動畫效果 */
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        outline: none;
+    }
+
+        .GButton:hover {
+            transform: scale(1.2); /* 鼠標懸停時按鈕變大 1.2 倍 */
+            cursor: pointer; /* 變換游標形狀為手型 */
+        }
+
+    .BookTable { /* 記帳紀錄 */
+        position: absolute;
+        left: 50%;
+        top: 25%;
+        transform: translate(-50%, 0%);
+        height: 320px; /* 設定高度，使其出現滾動條 */
+        width: 400px;
+        overflow-y: scroll; /* 垂直滾動條 */
+    }
+
+    .BookTableReport { /* 記帳報表 */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+    }
+
+    table.Gridview {
+        width: 392px;
+        height: 80px;
+        margin-top: 5px;
+        border: none; /* 不要框線 */
+    }
+
+        table.Gridview tr {
+            text-align: center;
+            font-size: 17px;
+        }
+
+        table.Gridview th, table.Gridview td { /* 不要左右框線 */
+            border-left: none;
+            border-right: none;
+        }
+
+    /*        table.Gridview th:first-child, table.Gridview td:first-child {
+            border-left: none;
+        }*/
+
+    table.Gridview2 {
+        width: 395px;
+        height: 80px;
+        margin-top: 5px;
+        border: none; /* 不要框線 */
+    }
+
+        table.Gridview2 tr {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        table.Gridview2 th, table.Gridview2 td { /* 不要左右框線 */
+            border-left: none;
+            border-right: none;
+        }
+
+    .BookTotal { /* 總收入、總支出 */
+        position: absolute;
+        bottom: 4%;
+        left: 50%;
+        width: 450px;
+        font-size: 25px;
+        text-align: center;
+        font-weight: bold;
+        transform: translate(-50%, -50%);
+    }
+
+    #NoRecordsLabel {
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        font-size: 25px;
+        font-weight: bold;
+        transform: translate(-45%, 0%);
+    }
+
+    #NoDataLabel {
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        font-size: 25px;
+        font-weight: bold;
+        transform: translate(-45%, 0%);
+    }
+}
+/*-------------記帳左結束-------------*/
+
+/*---------------記帳右---------------*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .BookRight {
+        position: absolute;
+        top: 48.5%;
+        left: 50%;
+        width: 330px;
+        height: 468.6px;
+        transform: translate(4.5%, -62%);
+    }
+
+    /* -----書籤按鈕位置----- */
+    .BookmarkUp {
+        position: absolute;
+        top: -9.4%;
+        height: 52.8px;
+        width: 52.8px;
+    }
+
+    .BookmarkDown {
+        position: absolute;
+        top: -6%;
+        height: 29.2182px;
+        width: 52.8px;
+    }
+
+    .AddBookmark {
+        position: absolute;
+        left: 10%;
+    }
+
+    .SearchBookmark {
+        position: absolute;
+        left: 26%;
+    }
+
+    .ReportBookmark {
+        position: absolute;
+        left: 42%;
+    }
+
+    .BookTitle { /* 功能標題 */
+        position: absolute;
+        font-size: 26.4px;
+        left: 50%;
+        top: 0%;
+        transform: translate(-50%, 50%);
+    }
+    /* ---書籤按鈕位置結束--- */
+
+    .BookChange { /* 功能區塊 */
+        position: absolute;
+        width: 500px;
+        left: 50%;
+        top: 21%;
+        text-align: center;
+        transform: translate(-50%, 0%);
+    }
+
+    .BookReport {
+        position: absolute;
+        width: 330px;
+        height: 300px;
+        left: 50%;
+        top: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+    }
+
+    /*---類別---*/
+    .SortContainer { /* 類別區塊 */
+        position: absolute;
+        display: flex;
+        top: 80%;
+        left: 50%;
+        align-items: center; /* 在主軸上居中對齊flex子元素 */
+        justify-content: center; /* 在交叉軸上居中對齊flex子元素 */
+        flex-direction: column; /* 將flex子元素的排列方向設置為垂直排列 */
+        font-size: 20px;
+        width: 330px;
+        transform: translate(-50%, -50%);
+    }
+
+    .RadioButtons {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .SortRadio input {
+        display: none; /* 隱藏radio button輸入框 */
+    }
+
+    .RadioBtn { /* 類別按鈕樣式 */
+        margin: 0px;
+        width: 66px;
+        height: 66px;
+        border: 3px solid aliceblue;
+        display: inline-block;
+        border-radius: 10px;
+        position: relative;
+        text-align: center;
+        box-shadow: 0 0 20px #c3c3c367; /* 陰影 */
+        cursor: pointer;
+    }
+
+        .RadioBtn > i { /* 勾勾 */
+            color: #ffffff;
+            background-color: teal;
+            font-size: 15px;
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%) scale(4); /* 向左平移50%，並放大4倍 */
+            border-radius: 50px;
+            padding: 4px; /* 內邊距 */
+            transition: 0.2s; /* 過渡效果秒數 */
+            pointer-events: none; /* 設鼠標事件不可用 */
+            opacity: 0; /* 透明度 */
+        }
+
+        .RadioBtn .SortIcon { /* 類別圖片 */
+            border-radius: 10px;
+            width: 107px;
+            height: 107px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* 將圖片向上向左平移50%的宽度和高度 */
+        }
+
+            .RadioBtn .SortIcon i {
+                line-height: 145px;
+                font-size: 60px;
+            }
+
+        .RadioBtn h3 { /* 類別文字 */
+            margin-top: -55px;
+            font-size: large;
+        }
+
+    .SortRadio input:checked + .RadioBtn { /* 如果選取類別 */
+        border: 3px solid teal;
+    }
+
+        .SortRadio input:checked + .RadioBtn > i {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+        }
+    /*---類別結束---*/
+
+    .BooAddText {
+        position: absolute;
+        left: 50%;
+        top: 500%;
+        width: 500px;
+        transform: translate(-50%, -50%);
+    }
+
+    .AddButton {
+        position: absolute;
+        left: 50%;
+        top: 135%;
+        width: 500px;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .BookRight {
+        position: absolute;
+        top: 48.5%;
+        left: 50%;
+        width: 400px;
+        height: 580px;
+        transform: translate(4%, -49%);
+    }
+
+    /* -----書籤按鈕位置----- */
+    .BookmarkUp {
+        position: absolute;
+        top: -9.4%;
+        height: 64px;
+        width: 64px;
+    }
+
+    .BookmarkDown {
+        position: absolute;
+        top: -6%;
+        height: 35.416px;
+        width: 64px;
+    }
+
+    .AddBookmark {
+        position: absolute;
+        left: 10%;
+    }
+
+    .SearchBookmark {
+        position: absolute;
+        left: 26%;
+    }
+
+    .ReportBookmark {
+        position: absolute;
+        left: 42%;
+    }
+
+    .BookTitle { /* 功能標題 */
+        position: absolute;
+        font-size: 32px;
+        left: 50%;
+        top: 1%;
+        transform: translate(-50%, 50%);
+    }
+    /* ---書籤按鈕位置結束--- */
+
+    .BookChange { /* 功能區塊 */
+        position: absolute;
+        width: 400px;
+        left: 50%;
+        top: 21%;
+        text-align: center;
+        transform: translate(-50%, 0%);
+    }
+
+    .BookReport {
+        position: absolute;
+        width: 400px;
+        left: 50%;
+        top: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+    }
+
+    /*---類別---*/
+    .SortContainer { /* 類別區塊 */
+        position: absolute;
+        display: flex;
+        width: 400px;
+        top: 120%;
+        left: 50%;
+        align-items: center; /* 在主軸上居中對齊flex子元素 */
+        justify-content: center; /* 在交叉軸上居中對齊flex子元素 */
+        flex-direction: column; /* 將flex子元素的排列方向設置為垂直排列 */
+        font-size: 20px;
+        transform: translate(-50%, -50%);
+    }
+
+    .RadioButtons {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .SortRadio input {
+        display: none; /* 隱藏radio button輸入框 */
+    }
+
+    .RadioBtn { /* 類別按鈕樣式 */
+        margin: 0px;
+        width: 80px;
+        height: 80px;
+        border: 3px solid aliceblue;
+        display: inline-block;
+        border-radius: 10px;
+        position: relative;
+        text-align: center;
+        box-shadow: 0 0 20px #c3c3c367; /* 陰影 */
+        cursor: pointer;
+    }
+
+        .RadioBtn > i { /* 勾勾 */
+            color: #ffffff;
+            background-color: teal;
+            font-size: 15px;
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%) scale(4); /* 向左平移50%，並放大4倍 */
+            border-radius: 50px;
+            padding: 4px; /* 內邊距 */
+            transition: 0.2s; /* 過渡效果秒數 */
+            pointer-events: none; /* 設鼠標事件不可用 */
+            opacity: 0; /* 透明度 */
+        }
+
+        .RadioBtn .SortIcon { /* 類別圖片 */
+            border-radius: 10px;
+            width: 162px;
+            height: 162px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* 將圖片向上向左平移50%的宽度和高度 */
+        }
+
+            .RadioBtn .SortIcon i {
+                line-height: 145px;
+                font-size: 60px;
+            }
+
+        .RadioBtn h3 { /* 類別文字 */
+            margin-top: -10px;
+            font-size: large;
+        }
+
+    .SortRadio input:checked + .RadioBtn { /* 如果選取類別 */
+        border: 3px solid teal;
+    }
+
+        .SortRadio input:checked + .RadioBtn > i {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+        }
+    /*---類別結束---*/
+
+    .BooAddText {
+        position: absolute;
+        left: 50%;
+        top: 600%;
+        width: 500px;
+        transform: translate(-50%, -50%);
+    }
+
+    .AddButton {
+        position: absolute;
+        left: 50%;
+        top: 150%;
+        width: 500px;
+        transform: translate(-50%, -50%);
+    }
+}
+/*-------------記帳右結束--------------*/
+/*--------------------------------記帳結束------------------------------------*/
+/*----------------------------------成就--------------------------------------*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .AchBody {
+        background-image: url('images/ach_bg.png');
+        background-size: 459.756px 471.096px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 459.756px;
+        height: 471.096px;
+        transform: translate(-50%, -50%);
+    }
+
+    .AchHeader { /* 上部分區塊 */
+        position: absolute;
+        top: 13%;
+        left: 50%;
+        height: 100px;
+        width: 270px;
+        transform: translate(-50%, -50%);
+    }
+
+    .AchTopTitle { /* 頁面標題 */
+        position: absolute;
+        color: darkcyan;
+        font-size: 32.4px;
+        left: 48%;
+        top: 10%;
+        transform: translate(-50%, 0%);
+    }
+
+    .AchTopButton { /* 成就頂端按鈕區塊 */
+        position: absolute;
+        left: 50%;
+        top: 65%;
+        width: 270px;
+        height: 27px;
+        transform: translate(-50%, 0%);
+    }
+
+    .NoFin {
+        position: absolute;
+        left: 32%;
+        top: 40%;
+        transform: translate(-50%, 0%);
+    }
+
+    .Fin {
+        position: absolute;
+        left: 65%;
+        top: 40%;
+        transform: translate(-50%, 0%);
+    }
+
+    .AchContent { /* 成就區塊 */
+        position: absolute;
+        left: 50%;
+        top: 25%;
+        transform: translate(-50%, 0%);
+        height: 295px; /* 設定內容區域的高度，使其可以出現滾動條 */
+        width: 300.4px;
+        overflow-y: scroll; /* 讓內容區域出現垂直滾動條 */
+    }
+
+    .task-container { /* 定義任務容器 */
+        display: flex; /* 使用 Flexbox 佈局 */
+        align-items: center; /* 垂直置中對齊 */
+        margin-bottom: 10px; /* 底邊距，控制每個任務之間的間距 */
+    }
+
+    .task-image { /* 左側圖片 */
+        flex: 1; /* 占用可用空間的一部分，使圖片在左側 */
+        max-width: 60px; /* 設置最大寬度，根據實際情況調整 */
+        height: auto; /* 保持原始比例 */
+    }
+
+    .task-main { /* 任務主題 */
+        font-size: 14px;
+    }
+
+    .task-content { /* 任務內容 */
+        flex: 2.3; /* 占用可用空間的一部分，使任務內容在中間 */
+        padding: 10px; /* 內邊距，增加內容區塊的間距 */
+        font-size: 10px;
+    }
+
+    .progress { /* 進度條 */
+        margin-top: 6px;
+        width: 135px;
+        height: 10.8px;
+        background-color: #ccc;
+        border: 2px solid teal;
+        border-radius: 15px;
+    }
+
+    .progress-bar {
+        width: 50%; /* 進度條的填充寬度（根據任務完成進度設定） */
+        height: 100%;
+        background-color: teal;
+        border-radius: 15px;
+    }
+
+    .claim-button { /* 領取按鈕 */
+        flex: 0.5; /* 占用可用空間的一部分，使按鈕在右側 */
+        text-align: center; /* 文字置中 */
+        width: 5px;
+        height: 50%;
+        font-size: 13px;
+    }
+
+    .check {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .AchBody {
+        background-image: url('images/ach_bg.png');
+        background-size: 681.12px 697.92px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 681.12px;
+        height: 697.92px;
+        transform: translate(-50%, -50%);
+    }
+
+    .AchHeader { /* 上部分區塊 */
+        position: absolute;
+        top: 13%;
+        left: 50%;
+        height: 150px;
+        width: 500px;
+        transform: translate(-50%, -50%);
+    }
+
+    .AchTopTitle { /* 頁面標題 */
+        position: absolute;
+        color: darkcyan;
+        font-size: 52px;
+        left: 48%;
+        top: 10%;
+        transform: translate(-50%, 0%);
+    }
+
+    .AchTopButton { /* 成就頂端按鈕區塊 */
+        position: absolute;
+        left: 50%;
+        top: 55%;
+        width: 500px;
+        height: 50px;
+        transform: translate(-50%, 0%);
+    }
+
+    .NoFin {
+        position: absolute;
+        left: 32%;
+        top: 40%;
+        transform: translate(-50%, 0%);
+    }
+
+    .Fin {
+        position: absolute;
+        left: 65%;
+        top: 40%;
+        transform: translate(-50%, 0%);
+    }
+
+    .AchContent { /* 成就區塊 */
+        position: absolute;
+        left: 50%;
+        top: 24%;
+        transform: translate(-50%, 0%);
+        height: 445px; /* 設定內容區域的高度，使其可以出現滾動條 */
+        width: 450px;
+        overflow-y: scroll; /* 讓內容區域出現垂直滾動條 */
+    }
+
+    .task-container { /* 定義任務容器 */
+        display: flex; /* 使用 Flexbox 佈局 */
+        align-items: center; /* 垂直置中對齊 */
+        margin-bottom: 16px; /* 底邊距，控制每個任務之間的間距 */
+    }
+
+    .task-image { /* 左側圖片 */
+        flex: 1; /* 占用可用空間的一部分，使圖片在左側 */
+        max-width: 100px; /* 設置最大寬度，根據實際情況調整 */
+        height: auto; /* 保持原始比例 */
+    }
+
+    .task-main { /* 任務主題 */
+        font-size: 23px;
+    }
+
+    .task-content { /* 任務內容 */
+        flex: 2.3; /* 占用可用空間的一部分，使任務內容在中間 */
+        padding: 10px; /* 內邊距，增加內容區塊的間距 */
+    }
+
+    .progress { /* 進度條 */
+        margin-top: 6px;
+        width: 200px;
+        height: 16px;
+        background-color: #ccc;
+        border: 2px solid teal;
+        border-radius: 15px;
+    }
+
+    .progress-bar {
+        width: 50%; /* 進度條的填充寬度（根據任務完成進度設定） */
+        height: 100%;
+        background-color: teal;
+        border-radius: 15px;
+    }
+
+    .claim-button { /* 領取按鈕 */
+        flex: 0.5; /* 占用可用空間的一部分，使按鈕在右側 */
+        text-align: center; /* 文字置中 */
+        width: 5px;
+        height: 50%;
+    }
+
+    .check {
+        width: 40px;
+        height: 40px;
+    }
+}
+/*--------------------------------成就結束------------------------------------*/
+
+/*--------------------------------願望清單------------------------------------*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .BucBody {
+        position: absolute;
+        background-image: url('images/dre_bg.png');
+        background-size: 544.2px 452.1px;
+        width: 544.2px;
+        height: 452.1px;
+        margin: auto;
+        display: flex;
+        background-repeat: no-repeat;
+        justify-content: center;
+        align-items: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .WishFlex { /*flex區塊(4個願望)*/
+        position: absolute;
+        width: 342px;
+        height: 342px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -43%);
+    }
+
+    .BucMemo { /* 單個願望便條 */
+        background: url('images/dre_memo.png');
+        background-size: 150px;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 150px;
+    }
+
+    .ContentFlex {
+        font-size: 24px;
+        width: 150px;
+        height: 150px;
+        font-weight: bold;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .BucButton12 {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #BucTrashcan { /* 垃圾桶按鈕 */
+        width: 96.48px;
+        height: 155.88px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-300%, 50%);
+    }
+
+        #BucTrashcan:hover {
+            width: 106.128px; /* 1.1倍 */
+            height: 171.468px; /* 1.1倍 */
+            transform: translate(-280%, 40%);
+        }
+
+    #ReviewButton { /* 審核區按鈕 */
+        width: 120px;
+        height: 132px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(163%, -50%);
+    }
+
+        #ReviewButton:hover {
+            width: 132px; /* 1.1倍 */
+            height: 145.2px; /* 1.1倍 */
+            transform: translate(143%, -50%);
+        }
+
+    #BucketAdd { /* 新增願望按鈕 */
+        width: 48px;
+        height: 48px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(400%, 300%);
+    }
+
+        #BucketAdd:hover {
+            width: 57.6px; /* 1.2倍 */
+            height: 57.6px; /* 1.2倍 */
+            transform: translate(320%, 240%);
+        }
+
+    #RecordButton {
+        position: absolute; /*指定絕對位置*/
+        width: 70px;
+        left: 50%;
+        top: 50%;
+        font-size: 15px;
+        transform: translate(-340%, -600%);
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .BucBody {
+        position: absolute;
+        background-image: url('images/dre_bg.png');
+        background-size: 725.6px 602.8px;
+        width: 725.6px;
+        height: 602.8px;
+        margin: auto;
+        display: flex;
+        background-repeat: no-repeat;
+        justify-content: center;
+        align-items: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .WishFlex { /*flex區塊(4個願望)*/
+        position: absolute;
+        width: 456px;
+        height: 456px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -43%);
+    }
+
+    .BucMemo { /* 單個願望便條 */
+        background: url('images/dre_memo.png');
+        background-size: 200px;
+        background-repeat: no-repeat;
+        width: 200px;
+        height: 200px;
+    }
+
+    .ContentFlex {
+        font-size: 32px;
+        width: 200px;
+        height: 200px;
+        font-weight: bold;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .BucButton12 {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #BucTrashcan { /* 垃圾桶按鈕 */
+        width: 128.64px;
+        height: 207.84px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-300%, 50%);
+    }
+
+        #BucTrashcan:hover {
+            width: 141.504px; /* 1.1倍 */
+            height: 228.624px; /* 1.1倍 */
+            transform: translate(-280%, 40%);
+        }
+
+    #ReviewButton { /* 審核區按鈕 */
+        width: 160px;
+        height: 176px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(163%, -50%);
+    }
+
+        #ReviewButton:hover {
+            width: 176px; /* 1.1倍 */
+            height: 193.6px; /* 1.1倍 */
+            transform: translate(143%, -50%);
+        }
+
+    #BucketAdd { /* 新增願望按鈕 */
+        width: 64px;
+        height: 64px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(400%, 300%);
+    }
+
+        #BucketAdd:hover {
+            width: 76.8px; /* 1.2倍 */
+            height: 76.8px; /* 1.2倍 */
+            transform: translate(320%, 240%);
+        }
+
+    #RecordButton {
+        position: absolute; /*指定絕對位置*/
+        width: 80px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-400%, -500%);
+    }
+}
+
+/*-----------------------願望功能----------------------------*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .BucWord { /* 願望功能內容文字 */
+        margin-top: 60px;
+        margin-left: 20px;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .YMemo { /* 黃色便條 */
+        background-image: url('images/dre_add_memo.png');
+    }
+
+    .BMemo { /* 藍色便條 */
+        background-image: url('images/dre_rev_button.png');
+    }
+
+    .Notebook { /* 歷史紀錄 */
+        background-image: url('images/notebook.png');
+        background-size: 298.5px 410.7px;
+        position: absolute; /*指定絕對位置*/
+        left: 50%;
+        top: 50%;
+        width: 298.5px;
+        height: 410.7px;
+        transform: translate(-50%, -50%);
+    }
+
+    .NoteTitle {
+        color: #2f004b;
+        font-size: 25px;
+        width: 200px;
+        font-weight: bold;
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%, 0%);
+    }
+
+    .NotebookText {
+        position: absolute;
+        height: 300px;
+        left: 50%;
+        top: 20%;
+        transform: translate(-50%, 0%);
+        overflow-y: scroll; /* 垂直滾動條 */
+    }
+
+    table.Gridview3 {
+        width: 250px;
+        height: 48px;
+        margin-top: 5px;
+        border: none; /* 不要框線 */
+    }
+
+        table.Gridview3 tr {
+            text-align: center;
+            color: #2f004b;
+            font-size: 14px;
+        }
+
+        table.Gridview3 th, table.Gridview3 td { /* 不要左右框線 */
+            color: #2f004b;
+            border-left: none;
+            border-right: none;
+        }
+
+    .MemoStyle { /* 便條區塊樣式 */
+        background-size: 390px 390px;
+        position: absolute; /*指定絕對位置*/
+        left: 50%;
+        top: 50%;
+        width: 390px;
+        height: 390px;
+        transform: translate(-50%, -50%);
+    }
+
+    .MemoStyle2 { /* 便條區塊樣式 */
+        background-size: 420px 420px;
+        position: absolute; /*指定絕對位置*/
+        left: 50%;
+        top: 50%;
+        width: 420px;
+        height: 420px;
+        transform: translate(-50%, -50%);
+    }
+
+    .BucDiv { /* 願望功能樣式 */
+        position: absolute; /*指定絕對位置*/
+        left: 50%;
+        top: 50%;
+        width: 390px;
+        height: 390px;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .DreWord { /* 願望功能內容文字 */
+        position: absolute;
+        width: 330px;
+        height: 250px;
+        left: 52%;
+        top: 58%;
+        font-size: 38px;
+        font-weight: bold;
+        transform: translate(-50%, -50%);
+    }
+
+    /*--換頁紐--*/
+    .LastNext { /* 區塊 */
+        position: absolute; /*指定絕對位置*/
+        width: 500px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-51%, -50%);
+    }
+
+    .LastNextSize { /* 按鈕大小 */
+        height: 50px;
+        width: 50px;
+    }
+
+    #Last { /* 上一個願望 */
+        position: absolute;
+        left: 40px;
+    }
+
+    #Next { /* 下一個願望 */
+        position: absolute;
+        right: 0px;
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .BucWord { /* 願望功能內容文字 */
+        margin-top: 160px;
+        margin-left: 20px;
+        font-size: 60px;
+        font-weight: bold;
+    }
+
+    .YMemo { /* 黃色便條 */
+        background-image: url('images/dre_add_memo.png');
+    }
+
+    .BMemo { /* 藍色便條 */
+        background-image: url('images/dre_rev_button.png');
+    }
+
+    .Notebook { /* 歷史紀錄 */
+        background-image: url('images/notebook.png');
+        background-size: 497.5px 684.5px;
+        position: absolute; /*指定絕對位置*/
+        left: 50%;
+        top: 50%;
+        width: 497.5px;
+        height: 684.5px;
+        transform: translate(-50%, -50%);
+    }
+
+    .NoteTitle {
+        font-size: 40px;
+        color: #2f004b;
+        font-weight: bold;
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%, 0%);
+    }
+
+    .NotebookText {
+        position: absolute;
+        left: 50%;
+        top: 20%;
+        height: 500px;
+        transform: translate(-50%, 0%);
+        overflow-y: scroll; /* 垂直滾動條 */
+    }
+
+    table.Gridview3 {
+        width: 395px;
+        height: 80px;
+        margin-top: 5px;
+        border: none; /* 不要框線 */
+    }
+
+        table.Gridview3 tr {
+            text-align: center;
+            font-size: 15px;
+        }
+
+        table.Gridview3 th, table.Gridview3 td { /* 不要左右框線 */
+            color: #2f004b;
+            border-left: none;
+            border-right: none;
+        }
+
+    .MemoStyle { /* 便條區塊樣式 */
+        background-size: 650px 650px;
+        position: absolute; /*指定絕對位置*/
+        left: 50%;
+        top: 50%;
+        width: 650px;
+        height: 650px;
+        transform: translate(-50%, -50%);
+    }
+
+    .MemoStyle2 { /* 便條區塊樣式 */
+        background-size: 650px 650px;
+        position: absolute; /*指定絕對位置*/
+        left: 50%;
+        top: 50%;
+        width: 650px;
+        height: 650px;
+        transform: translate(-50%, -50%);
+    }
+
+    .BucDiv { /* 願望功能樣式 */
+        position: absolute; /*指定絕對位置*/
+        left: 50%;
+        top: 50%;
+        width: 650px;
+        height: 650px;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .DreWord { /* 願望功能內容文字 */
+        position: absolute;
+        left: 52%;
+        top: 60%;
+        width: 480px;
+        height: 300px;
+        font-size: 42px;
+        font-weight: bold;
+        transform: translate(-50%, -50%);
+    }
+
+    /*--換頁紐--*/
+    .LastNext { /* 區塊 */
+        position: absolute; /*指定絕對位置*/
+        width: 700px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .LastNextSize { /* 按鈕大小 */
+        height: 50px;
+        width: 50px;
+    }
+
+    #Last { /* 上一個願望 */
+        position: absolute;
+        left: 40px;
+    }
+
+    #Next { /* 下一個願望 */
+        position: absolute;
+        right: 0px;
+    }
+}
+/*----------*/
+
+/*--------------願望新增---------------*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .BucAddButton { /* 按鈕區塊 */
+        position: absolute; /*指定絕對位置*/
+        width: 156px;
+        left: 50%;
+        top: 70%;
+        transform: translate(-50%, -50%);
+    }
+
+    #BucAdd {
+        position: absolute;
+        right: 0px;
+    }
+
+    #BucUnadd {
+        position: absolute;
+        left: 0px;
+    }
+
+    /* 下拉選單 */
+    #customSelect {
+        position: absolute;
+        width: 250px;
+        left: 50%;
+        top: 50%;
+        font-size: 20px;
+        transform: translate(-50%, -50%);
+    }
+
+    #WishTextbox {
+        width: 100%;
+        padding: 8px;
+        width: 250px; /* 修改寬度 */
+        height: 30px; /* 修改高度 */
+        font-size: 25px;
+    }
+
+    #arrowIcon {
+        position: absolute;
+        top: 50%;
+        right: -5px;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+        #arrowIcon:hover {
+            transform: translateY(-50%) scale(1.2); /* 在 hover 時放大 1.2 倍 */
+        }
+
+    #customOptions {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: 150px; /* 設定最大高度，超過高度將出現滾動條 */
+        overflow-y: auto; /* 啟用垂直滾動條 */
+        background-color: #ffffff8f; /* 設定底色 */
+        border: 1px solid #ccc;
+        border-top: none;
+        border-radius: 0 0 10px 10px; /* 加入底部圓角 */
+        display: none;
+    }
+
+    .option {
+        padding: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s; /* 添加過渡效果 */
+    }
+
+        .option:hover {
+            background-color: #BEE3E280; /* 在 hover 時變更底色 */
+            font-size: 22px;
+        }
+    /* 下拉選單尾 */
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .BucAddButton { /* 按鈕區塊 */
+        position: absolute; /*指定絕對位置*/
+        width: 260px;
+        left: 50%;
+        top: 70%;
+        transform: translate(-50%, -50%);
+    }
+
+    #BucAdd {
+        position: absolute;
+        right: 0px;
+    }
+
+    #BucUnadd {
+        position: absolute;
+        left: 0px;
+    }
+
+    /* 下拉選單 */
+    #customSelect {
+        position: absolute;
+        width: 300px;
+        left: 50%;
+        top: 50%;
+        font-size: 20px;
+        transform: translate(-50%, -50%);
+    }
+
+    #WishTextbox {
+        width: 100%;
+        padding: 8px;
+        width: 300px; /* 修改寬度 */
+        height: 40px; /* 修改高度 */
+        font-size: 25px;
+    }
+
+    #arrowIcon {
+        position: absolute;
+        top: 50%;
+        right: -5px;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+        #arrowIcon:hover {
+            transform: translateY(-50%) scale(1.2); /* 在 hover 時放大 1.2 倍 */
+        }
+
+    #customOptions {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: 150px; /* 設定最大高度，超過高度將出現滾動條 */
+        overflow-y: auto; /* 啟用垂直滾動條 */
+        background-color: #ffffff8f; /* 設定底色 */
+        border: 1px solid #ccc;
+        border-top: none;
+        border-radius: 0 0 10px 10px; /* 加入底部圓角 */
+        display: none;
+    }
+
+    .option {
+        padding: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s; /* 添加過渡效果 */
+    }
+
+        .option:hover {
+            background-color: #BEE3E280; /* 在 hover 時變更底色 */
+            font-size: 22px;
+        }
+    /* 下拉選單尾 */
+}
+/*------------願望新增結束------------*/
+
+/*-------------願望垃圾桶-------------*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .TraButton {
+        position: absolute;
+        left: 50%;
+        top: 80%;
+        transform: translate(-50%, -50%);
+    }
+
+    .TraWord { /* 願望功能內容文字 */
+        position: absolute;
+        width: 282px;
+        height: 250px;
+        left: 52%;
+        top: 50%;
+        font-size: 30px;
+        font-weight: bold;
+        transform: translate(-50%, -50%);
+    }
+
+    .TraCause {
+        position: absolute;
+        width: 280px;
+        left: 50%;
+        top: 50%;
+        font-weight: bold;
+        transform: translate(-50%, -50%);
+    }
+
+    .NoCantBuy { /* 沒有要審核的願望 */
+        position: absolute;
+        width: 230px;
+        top: 50%;
+        left: 50%;
+        font-size: 30px;
+        font-weight: bold;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .TraButton {
+        left: 50%;
+        top: 80%;
+        transform: translate(-50%, -50%);
+    }
+
+    .TraWord { /* 願望功能內容文字 */
+        position: absolute;
+        left: 52%;
+        top: 50%;
+        width: 480px;
+        height: 300px;
+        font-size: 42px;
+        font-weight: bold;
+        transform: translate(-50%, -50%);
+    }
+
+    .TraCause {
+        position: absolute;
+        width: 400px;
+        left: 50%;
+        top: 50%;
+        font-weight: bold;
+        transform: translate(-50%, -50%);
+    }
+
+    .NoCantBuy { /* 沒有要審核的願望 */
+        position: absolute;
+        width: 300px;
+        top: 50%;
+        left: 50%;
+        font-size: 40px;
+        font-weight: bold;
+        transform: translate(-50%, -50%);
+    }
+}
+/*-----------願望垃圾桶結束-----------*/
+
+/*-------------願望審核區-------------*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .NoRev { /* 沒有要審核的願望 */
+        position: absolute;
+        width: 230px;
+        top: 50%;
+        left: 50%;
+        font-size: 30px;
+        font-weight: bold;
+        transform: translate(-50%, -80%);
+    }
+
+    .BucPwTitle {
+        font-size: 30px;
+        margin-left: 10px;
+    }
+
+    .YesNo { /* 可以、不可以 */
+        font-size: 20px;
+        position: absolute; /*指定絕對位置*/
+        left: 50%;
+        top: 50%;
+        width: 170px;
+        transform: translate(-50%, -80%);
+    }
+
+    .RevText {
+        font-size: 28px;
+        position: absolute; /*指定絕對位置*/
+        left: 50%;
+        top: 30%;
+        width: 650px;
+        transform: translate(-50%, -80%);
+    }
+
+    .RevTextbox { /* 輸入金額或原因 */
+        font-size: 20px;
+        position: absolute; /*指定絕對位置*/
+        left: 50%;
+        top: 60%;
+        width: 650px;
+        transform: translate(-50%, -35%);
+    }
+
+    .RevTextbox2 { /* 輸入金額或原因 */
+        font-size: 20px;
+        position: absolute; /*指定絕對位置*/
+        left: 50%;
+        top: 60%;
+        width: 650px;
+        transform: translate(-50%, -30%);
+    }
+
+    .BucButton { /* 審核確認紐 */
+        left: 50%;
+        top: 87%;
+        transform: translate(-50%, -50%);
+    }
+
+    .BucPwButton { /* 審核確認紐 */
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, -50%);
+    }
+
+    .BucButton2 { /* 審核確認紐 */
+        left: 50%;
+        top: 85%;
+        transform: translate(-50%, -50%);
+    }
+
+    .RevForgetPwd {
+        position: absolute;
+        width: 500px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-32%, -80%);
+        font-size: 15px;
+    }
+
+    .Qua {
+        position: absolute;
+        width: 500px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 80%);
+        font-size: 20px;
+    }
+
+    .ErrorMessageLabel {
+        position: absolute;
+        width: 500px;
+        top: 50%;
+        left: 50%;
+        color: red;
+        transform: translate(-50%, 40%);
+        font-size: 9px;
+    }
+
+    .ForgetRevPwText {
+        position: absolute;
+        width: 500px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-48%, -45%);
+        font-size: 18px;
+    }
+
+    .ForgetRevPwButtn {
+        position: absolute;
+        width: 500px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 145%);
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .NoRev { /* 沒有要審核的願望 */
+        position: absolute;
+        width: 300px;
+        top: 50%;
+        left: 50%;
+        font-size: 40px;
+        font-weight: bold;
+        transform: translate(-50%, -100%);
+    }
+
+    .BucPwTitle {
+        font-size: 40px;
+    }
+
+    .YesNo { /* 可以、不可以 */
+        font-size: 30px;
+        position: absolute; /*指定絕對位置*/
+        left: 50%;
+        top: 50%;
+        width: 220px;
+        transform: translate(-50%, -60%);
+    }
+
+    .RevTextbox { /* 輸入金額或原因 */
+        font-size: 30px;
+        position: absolute; /*指定絕對位置*/
+        left: 50%;
+        top: 50%;
+        width: 650px;
+        transform: translate(-50%, 70%);
+    }
+
+    .RevTextbox2 { /* 輸入金額或原因 */
+        font-size: 30px;
+        position: absolute; /*指定絕對位置*/
+        left: 50%;
+        top: 50%;
+        width: 650px;
+        transform: translate(-50%, 20%);
+    }
+
+    .BucButton { /* 審核確認紐 */
+        left: 50%;
+        top: 85%;
+        transform: translate(-50%, -50%);
+    }
+
+    .BucPwButton { /* 審核確認紐 */
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, -50%);
+    }
+
+    .BucButton2 { /* 審核確認紐 */
+        left: 50%;
+        top: 85%;
+        transform: translate(-50%, -50%);
+    }
+
+    .RevForgetPwd {
+        position: absolute;
+        width: 500px;
+        top: 48%;
+        left: 50%;
+        transform: translate(-32%, -80%);
+        font-size: 18px;
+    }
+
+    .Qua {
+        position: absolute;
+        width: 500px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 100%);
+        font-size: 25px;
+    }
+
+    .ErrorMessageLabel {
+        position: absolute;
+        width: 500px;
+        top: 50%;
+        left: 50%;
+        color: red;
+        transform: translate(-50%, 50%);
+        font-size: 15px;
+    }
+
+    .ForgetRevPwText {
+        position: absolute;
+        width: 500px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-48%, -50%);
+        font-size: 25px;
+    }
+
+    .ForgetRevPwButtn {
+        position: absolute;
+        width: 500px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 160%);
+    }
+}
+/*----------願望審核區結束----------*/
+/*------------------------------------更衣室------------------------------------*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .DreRoom {
+        position: absolute;
+        background-image: url('images/cloth/cloth_bg.png');
+        background-size: 628.2px 526.32px;
+        height: 526.32px;
+        width: 628.2px;
+        background-repeat: no-repeat;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+        overflow-y: hidden;
+    }
+
+    .DreButton { /* 底部按鈕區塊 */
+        position: absolute;
+        bottom: 5%;
+        left: 51%;
+        transform: translate(-50%, -50%);
+        width: 215px;
+        height: 40px;
+    }
+
+    .ClothButton {
+        transition: transform 0.2s; /* 添加變換動畫效果 */
+    }
+
+        .ClothButton:hover {
+            transform: scale(1.1); /* 鼠標懸停時按鈕變大 1.2 倍 */
+        }
+
+    .HeadImage {
+        margin-left: 14px;
+        margin-top: 8px;
+        width: 116.736px;
+        height: 162.816px;
+    }
+
+    .ClothImage {
+        margin-left: 12px;
+        margin-top: 8px;
+        width: 119.04px;
+        height: 138.24px;
+    }
+
+    .PetImage {
+        margin-left: 10px;
+        margin-top: 8px;
+        width: 119.04px;
+        height: 119.04px;
+    }
+
+    .Left {
+        height: 410px;
+        position: absolute;
+        transform: translate(0%, -50%);
+        top: 50%;
+        left: 0%;
+    }
+
+    .Head {
+        background-color: #BEE3E280;
+        height: 180px;
+        width: 145px;
+        border-radius: 15px; /*圓角*/
+        overflow-y: scroll; /* 垂直滾動條 */
+    }
+
+    .Cloth {
+        background-color: #BEE3E280;
+        height: 230px;
+        width: 145px;
+        margin-top: 6px;
+        border-radius: 15px; /*圓角*/
+        overflow-y: scroll; /* 垂直滾動條 */
+    }
+
+    .DrePerson { /* 人物 */
+        position: absolute;
+        height: 480px;
+        width: 228px;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #NowBody {
+        position: absolute;
+        width: 186px;
+        height: 216px;
+        top: 60%;
+        left: 50%;
+        transform: translate(-49%, -52%);
+    }
+
+    #NowHead {
+        position: absolute;
+        width: 182.4px;
+        height: 254.4px;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #NowPet {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        top: 68%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+    }
+
+    .Pet {
+        background-color: #BEE3E280;
+        height: 360px;
+        width: 145px;
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translate(-100%, -50%);
+        border-radius: 15px; /*圓角*/
+        overflow-y: scroll; /* 垂直滾動條 */
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .DreRoom {
+        position: absolute;
+        background-image: url('images/cloth/cloth_bg.png');
+        background-size: 1047px 877.2px;
+        height: 877.2px;
+        width: 1047px;
+        background-repeat: no-repeat;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+        overflow-y: hidden;
+    }
+
+    .DreButton { /* 底部按鈕區塊 */
+        position: absolute;
+        bottom: 1%;
+        left: 51%;
+        transform: translate(-50%, -50%);
+        width: 254px;
+        height: 90px;
+    }
+
+    .ClothButton {
+        transition: transform 0.2s; /* 添加變換動畫效果 */
+    }
+
+        .ClothButton:hover {
+            transform: scale(1.1); /* 鼠標懸停時按鈕變大 1.2 倍 */
+        }
+
+    .HeadImage {
+        margin-left: 25px;
+        margin-top: 15px;
+        width: 194.56px;
+        height: 271.36px;
+    }
+
+    .ClothImage {
+        margin-left: 23px;
+        margin-top: 15px;
+        width: 198.4px;
+        height: 230.4px;
+    }
+
+    .PetImage {
+        margin-left: 20px;
+        margin-top: 15px;
+        width: 198.4px;
+        height: 198.4px;
+    }
+
+    .Left {
+        height: 680px;
+        position: absolute;
+        transform: translate(0%, -50%);
+        top: 50%;
+        left: 0%;
+    }
+
+    .Head {
+        background-color: #BEE3E280;
+        height: 300px;
+        width: 245px;
+        border-radius: 15px; /*圓角*/
+        overflow-y: scroll; /* 垂直滾動條 */
+    }
+
+    .Cloth {
+        background-color: #BEE3E280;
+        height: 380px;
+        width: 245px;
+        margin-top: 10px;
+        border-radius: 15px; /*圓角*/
+        overflow-y: scroll; /* 垂直滾動條 */
+    }
+
+    .DrePerson { /* 人物 */
+        position: absolute;
+        height: 800px;
+        width: 380px;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #NowBody {
+        position: absolute;
+        width: 310px;
+        height: 360px;
+        top: 60%;
+        left: 50%;
+        transform: translate(-49%, -52%);
+    }
+
+    #NowHead {
+        position: absolute;
+        width: 304px;
+        height: 424px;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #NowPet {
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        top: 68%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+    }
+
+    .Pet {
+        background-color: #BEE3E280;
+        height: 600px;
+        width: 245px;
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translate(-100%, -50%);
+        border-radius: 15px; /*圓角*/
+        overflow-y: scroll; /* 垂直滾動條 */
+    }
+}
+/*------------------------------------更衣室結束------------------------------------*/
+
+/*------------------------------------小遊戲開始------------------------------------*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .GameBody {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-image: url('images/game/game_screen.png');
+        background-size: 654.8256px 441.3474px;
+        width: 654.8256px;
+        height: 441.3474px;
+        transform: translate(-50%, -40%);
+    }
+
+    .GameBackground {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 526.5px;
+        height: 321.75px;
+        background-color: paleturquoise;
+        transform: translate(-50%, -60%);
+    }
+
+    .GameTitle {
+        color: darkcyan;
+        font-size: 29.5px;
+        font-weight: bold;
+        position: absolute;
+        top: 13%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .GameMain {
+        position: absolute;
+        top: 43%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 520px;
+        height: 227.5px;
+        padding: 13px;
+        line-height: 32.5px;
+    }
+
+    .GameMenuButton {
+        width: 130px;
+        height: 130px;
+    }
+
+        .GameMenuButton:hover {
+            width: 143px;
+            height: 143px;
+        }
+
+    #GameIcon1 {
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+    }
+
+    #GameTit1 {
+        font-size: 20px;
+        font-weight: bold;
+        position: absolute;
+        top: 85%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+    }
+
+    #GameIcon2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #GameTit2 {
+        font-size: 20px;
+        font-weight: bold;
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #GameIcon3 {
+        position: absolute;
+        top: 50%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+    }
+
+    #GameTit3 {
+        font-size: 20px;
+        font-weight: bold;
+        position: absolute;
+        top: 85%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+    }
+
+    #GameIntro {
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%, 0%);
+    }
+
+    .GameEnd {
+        width: 100px;
+        height: 40px;
+    }
+
+    .CorrectcntText {
+        position: absolute;
+        left: 66%;
+        top: 77%;
+        width: 170px;
+        font-size: 30px;
+        font-weight: bolder;
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .GameBody {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-image: url('images/game/game_screen.png');
+        background-size: 1007.424px 678.996px;
+        width: 1007.424px;
+        height: 678.996px;
+        transform: translate(-50%, -40%);
+    }
+
+    .GameBackground {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 810px;
+        height: 495px;
+        background-color: paleturquoise;
+        transform: translate(-50%, -60%);
+    }
+
+    .GameTitle {
+        color: darkcyan;
+        font-size: 70px;
+        font-weight: bold;
+        position: absolute;
+        top: 13%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .GameMain {
+        position: absolute;
+        top: 43%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 800px;
+        height: 350px;
+        padding: 20px;
+        line-height: 50px;
+    }
+
+    .GameMenuButton {
+        width: 200px;
+        height: 200px;
+    }
+
+        .GameMenuButton:hover {
+            width: 220px;
+            height: 220px;
+        }
+
+    #GameIcon1 {
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+    }
+
+    #GameTit1 {
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 85%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+    }
+
+    #GameIcon2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #GameTit2 {
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #GameIcon3 {
+        position: absolute;
+        top: 50%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+    }
+
+    #GameTit3 {
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 85%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+    }
+
+    #GameIntro {
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%, 0%);
+    }
+
+    .GameEnd {
+        width: 150px;
+        height: 40px;
+    }
+
+    .CorrectcntText {
+        position: absolute;
+        left: 70%;
+        top: 80%;
+        width: 220px;
+        font-size: 40px;
+        font-weight: bolder;
+    }
+}
+
+/*====================認識錢幣======================*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .GameLeft { /*左半邊(題目)*/
+        Height: 292.5px;
+        Width: 357.5px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-70%, -69%);
+        text-align: center;
+        line-height: 123.5px;
+    }
+
+    .GameRight {
+        Height: 292.5px;
+        Width: 143px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(75%, -69%);
+    }
+
+    #Ans1, #Ans4 {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Ans2, #Ans5 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Ans3, #Ans6 {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .question {
+        font-size: 29.25px;
+        color: darkcyan;
+        font-weight: bold;
+    }
+
+    #Image1 {
+        position: absolute;
+        top: 60%;
+        max-height: 40%;
+        width: auto;
+        transform: translate(-50%, -50%);
+    }
+
+    .CoinAnsButton,
+    .CoinAnsButton:focus {
+        position: absolute; /*指定絕對位置*/
+        border: 3px solid teal;
+        border-radius: 4px;
+        background-color: transparent;
+        color: teal;
+        font-size: 32.5px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition-duration: 0.4s;
+        width: 130px;
+        height: 65px;
+    }
+
+        .CoinAnsButton:hover {
+            border: 3px solid #ffffff;
+            box-shadow: 0px 2px 10px 5px teal;
+            color: white;
+            background-color: lightseagreen;
+        }
+
+        .CoinAnsButton:after {
+            content: "";
+            display: block;
+            position: absolute;
+            margin-left: -20px !important;
+            opacity: 0;
+            transition: all 0.8s
+        }
+
+        .CoinAnsButton:active:after {
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            transition: 0s;
+        }
+
+    #LeaveGame {
+        position: absolute;
+        bottom: 0%;
+        right: 1%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* 進度條 */
+    /* 進度條 */
+    .GameProgress {
+        position: absolute;
+        top: 73.8%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 195px;
+        height: 19.5px;
+        background-color: #ccc;
+        border: 2px solid teal;
+        border-radius: 15px;
+    }
+
+    .GameProgress-bar {
+        width: 50%; /* 進度條的填充寬度 (根據任務完成進度設定) */
+        height: 100%;
+        background-color: teal;
+        border-radius: 15px;
+    }
+
+    .GameProgressText {
+        position: absolute;
+        top: 73.6%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+        font-size: 16.25px;
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .GameLeft { /*左半邊(題目)*/
+        Height: 450px;
+        Width: 550px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-70%, -69%);
+        text-align: center;
+        line-height: 190px;
+    }
+
+    .GameRight {
+        Height: 450px;
+        Width: 220px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(75%, -69%);
+    }
+
+    #Ans1, #Ans4 {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Ans2, #Ans5 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Ans3, #Ans6 {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .question {
+        font-size: 35px;
+        color: darkcyan;
+        font-weight: bold;
+    }
+
+    #Image1 {
+        position: absolute;
+        top: 60%;
+        max-height: 40%;
+        width: auto;
+        transform: translate(-50%, -50%);
+    }
+
+    .CoinAnsButton,
+    .CoinAnsButton:focus {
+        position: absolute; /*指定絕對位置*/
+        border: 3px solid teal;
+        border-radius: 4px;
+        background-color: transparent;
+        color: teal;
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition-duration: 0.4s;
+        width: 200px;
+        height: 100px;
+    }
+
+        .CoinAnsButton:hover {
+            border: 3px solid #ffffff;
+            box-shadow: 0px 2px 10px 5px teal;
+            color: white;
+            background-color: lightseagreen;
+        }
+
+        .CoinAnsButton:after {
+            content: "";
+            display: block;
+            position: absolute;
+            margin-left: -20px !important;
+            opacity: 0;
+            transition: all 0.8s
+        }
+
+        .CoinAnsButton:active:after {
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            transition: 0s;
+        }
+
+    #LeaveGame {
+        position: absolute;
+        bottom: 0%;
+        right: 1%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* 進度條 */
+    /* 進度條 */
+    .GameProgress {
+        position: absolute;
+        top: 73.8%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 30px;
+        background-color: #ccc;
+        border: 2px solid teal;
+        border-radius: 15px;
+    }
+
+    .GameProgress-bar {
+        width: 50%; /* 進度條的填充寬度 (根據任務完成進度設定) */
+        height: 100%;
+        background-color: teal;
+        border-radius: 15px;
+    }
+
+    .GameProgressText {
+        position: absolute;
+        top: 73.6%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+        font-size: 25px;
+    }
+}
+/*====================認識錢幣結束===================*/
+
+/*======================金幣加總=======================*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .GameLeft2 { /*左半邊(題目)*/
+        Height: 292.5px;
+        Width: 357.5px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-70%, -69%);
+        text-align: center;
+        line-height: 61.5px;
+    }
+
+    .GameRight2 {
+        Height: 292.5px;
+        Width: 143px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(75%, -69%);
+    }
+
+    .question2 {
+        font-size: 23px;
+        color: darkcyan;
+        font-weight: bold;
+    }
+
+    .Thousand {
+        width: 380px;
+        height: 50px;
+        position: absolute;
+        top: 25%;
+        left: 5%;
+        transform: translate(0%, -50%);
+        text-align: left;
+    }
+
+    .FiveHundred {
+        width: 460px;
+        height: 50px;
+        position: absolute;
+        top: 40%;
+        left: 5%;
+        transform: translate(0%, -50%);
+        text-align: left;
+    }
+
+    .OneHundred {
+        width: 400px;
+        height: 50px;
+        position: absolute;
+        top: 54%;
+        left: 5%;
+        transform: translate(0%, -50%);
+        text-align: left;
+    }
+
+    .Fifty {
+        width: 150px;
+        height: 50px;
+        position: absolute;
+        top: 70%;
+        left: 5%;
+        transform: translate(0%, -50%);
+        text-align: left;
+    }
+
+    .Ten {
+        width: 225px;
+        height: 50px;
+        position: absolute;
+        top: 70%;
+        left: 48%;
+        transform: translate(0%, -50%);
+        text-align: left;
+    }
+
+    .Five {
+        width: 170px;
+        height: 50px;
+        position: absolute;
+        top: 85%;
+        left: 5%;
+        transform: translate(0%, -50%);
+        text-align: left;
+    }
+
+    .One {
+        width: 262.5px;
+        height: 50px;
+        position: absolute;
+        top: 85%;
+        left: 48%;
+        transform: translate(0%, -50%);
+        text-align: left;
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .GameLeft2 { /*左半邊(題目)*/
+        Height: 450px;
+        Width: 550px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-70%, -69%);
+        text-align: center;
+        line-height: 95px;
+    }
+
+    .GameRight2 {
+        Height: 450px;
+        Width: 220px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(75%, -69%);
+    }
+
+    .question2 {
+        font-size: 35px;
+        color: darkcyan;
+        font-weight: bold;
+    }
+
+    .Thousand {
+        width: 380px;
+        height: 50px;
+        position: absolute;
+        top: 25%;
+        left: 5%;
+        transform: translate(0%, -50%);
+        text-align: left;
+    }
+
+    .FiveHundred {
+        width: 460px;
+        height: 50px;
+        position: absolute;
+        top: 40%;
+        left: 5%;
+        transform: translate(0%, -50%);
+        text-align: left;
+    }
+
+    .OneHundred {
+        width: 400px;
+        height: 50px;
+        position: absolute;
+        top: 54%;
+        left: 5%;
+        transform: translate(0%, -50%);
+        text-align: left;
+    }
+
+    .Fifty {
+        width: 150px;
+        height: 50px;
+        position: absolute;
+        top: 70%;
+        left: 5%;
+        transform: translate(0%, -50%);
+        text-align: left;
+    }
+
+    .Ten {
+        width: 225px;
+        height: 50px;
+        position: absolute;
+        top: 70%;
+        left: 48%;
+        transform: translate(0%, -50%);
+        text-align: left;
+    }
+
+    .Five {
+        width: 170px;
+        height: 50px;
+        position: absolute;
+        top: 85%;
+        left: 5%;
+        transform: translate(0%, -50%);
+        text-align: left;
+    }
+
+    .One {
+        width: 262.5px;
+        height: 50px;
+        position: absolute;
+        top: 85%;
+        left: 48%;
+        transform: translate(0%, -50%);
+        text-align: left;
+    }
+}
+
+/*======================金幣加總結束===================*/
+
+/*======================買文具===================*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .GameBackground3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 650px;
+        height: 442px;
+        border-radius: 30px;
+        background-color: paleturquoise;
+        transform: translate(-50%, -50%);
+    }
+
+    .GameLeft3_1 {
+        background-image: url('images/game/game_buylist.png');
+        background-size: 200px 200px;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 1%;
+        left: 1%;
+    }
+
+    .ListSize {
+        width: 28.6px;
+        height: 54.6px;
+    }
+
+    .SisQ {
+        position: absolute;
+        top: 20%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        height: 54.6px;
+        align-items: center;
+        font-size: 13px;
+    }
+
+    .GlueQ {
+        position: absolute;
+        top: 38%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        height: 54.6px;
+        align-items: center;
+        font-size: 13px;
+    }
+
+    .CorQ {
+        position: absolute;
+        top: 59%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        height: 54.6px;
+        align-items: center;
+        font-size: 13px;
+    }
+
+    .RulerQ {
+        position: absolute;
+        top: 78%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        height: 54.6px;
+        align-items: center;
+        font-size: 13px;
+    }
+
+    .RedQ {
+        position: absolute;
+        top: 20%;
+        left: 65%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        height: 54.6px;
+        align-items: center;
+        font-size: 13px;
+    }
+
+    .GreenQ {
+        position: absolute;
+        top: 38%;
+        left: 65%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        height: 54.6px;
+        align-items: center;
+        font-size: 13px;
+    }
+
+    .BlueQ {
+        position: absolute;
+        top: 59%;
+        left: 65%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        height: 54.6px;
+        align-items: center;
+        font-size: 13px;
+    }
+
+    .BlackQ {
+        position: absolute;
+        top: 78%;
+        left: 65%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        height: 54.6px;
+        align-items: center;
+        font-size: 13px;
+    }
+
+    .Stationery { /*文具區*/
+        background-image: url('images/game/game3_cab.png');
+        background-size: 329.0625px 175.5px;
+        width: 329.0625px;
+        height: 175.5px;
+        position: absolute;
+        top: 26%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+        cursor: grab;
+    }
+
+    .PenSize {
+        width: 68.00625px;
+        height: 105.3px;
+    }
+
+        .PenSize:hover {
+            width: 74.806875px;
+            height: 115.83px;
+        }
+
+    .StaSize {
+        width: 70.2px;
+        height: 57.0375px;
+    }
+
+        .StaSize:hover {
+            width: 77.22px;
+            height: 62.74125px;
+        }
+
+    .ShoppingCart {
+        background-color: #9CD9C5;
+        width: 650px;
+        height: 230px;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 30px; /*圓角*/
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        flex-wrap: wrap;
+        font-size: 100px;
+    }
+
+    #ShoppingCart .draggable-item { /*購物車內的圖片*/
+        width: auto;
+        height: auto;
+        max-width: 80px;
+        max-height: 110px;
+    }
+
+        #ShoppingCart .draggable-item:hover { /*購物車內的圖片*/
+            max-width: 88px;
+            max-height: 121px;
+        }
+
+    .dragged-image {
+        position: absolute;
+        pointer-events: none; /* 拖曳圖片，但原本的圖片不會消失*/
+    }
+
+    #Trolley { /*購物車圖示*/
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 42%;
+        left: 1%;
+    }
+
+    #Redd {
+        position: absolute;
+        top: 16%;
+        left: 20.5%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Greenn {
+        position: absolute;
+        top: 16%;
+        left: 40.5%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Bluee {
+        position: absolute;
+        top: 16%;
+        left: 59.5%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Blackk {
+        position: absolute;
+        top: 16%;
+        left: 78.5%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Siss {
+        position: absolute;
+        top: 62%;
+        left: 18%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Gluee {
+        position: absolute;
+        top: 62%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Corr {
+        position: absolute;
+        top: 62%;
+        left: 61%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Rulerr {
+        position: absolute;
+        top: 62%;
+        left: 81%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Correct1 {
+        position: absolute;
+        top: 42%;
+        left: 96%;
+        transform: translate(-100%, -50%);
+    }
+
+    #LeaveGame3 {
+        position: absolute;
+        width: 80px;
+        font-size: 15px;
+        top: 10%;
+        left: 96%;
+        transform: translate(-100%, -50%);
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .GameBackground3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1000px;
+        height: 680px;
+        border-radius: 30px;
+        background-color: paleturquoise;
+        transform: translate(-50%, -50%);
+    }
+
+    .GameLeft3_1 {
+        background-image: url('images/game/game_buylist.png');
+        background-size: 360px 375px;
+        width: 360px;
+        height: 375px;
+        position: absolute;
+        top: 3%;
+        left: 2%;
+    }
+
+    .ListSize {
+        width: 44px;
+        height: 84px;
+    }
+
+    .SisQ {
+        position: absolute;
+        top: 20%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        height: 84px;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .GlueQ {
+        position: absolute;
+        top: 38%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        height: 84px;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .CorQ {
+        position: absolute;
+        top: 59%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        height: 84px;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .RulerQ {
+        position: absolute;
+        top: 78%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        height: 84px;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .RedQ {
+        position: absolute;
+        top: 20%;
+        left: 65%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        height: 84px;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .GreenQ {
+        position: absolute;
+        top: 38%;
+        left: 65%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        height: 84px;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .BlueQ {
+        position: absolute;
+        top: 59%;
+        left: 65%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        height: 84px;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .BlackQ {
+        position: absolute;
+        top: 78%;
+        left: 65%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        height: 84px;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .Stationery { /*文具區*/
+        background-image: url('images/game/game3_cab.png');
+        background-size: 562.5px 300px;
+        width: 562.5px;
+        height: 300px;
+        position: absolute;
+        top: 35%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        cursor: grab;
+    }
+
+    .PenSize {
+        width: 116.25px;
+        height: 180px;
+    }
+
+        .PenSize:hover {
+            width: 127.875px;
+            height: 198px;
+        }
+
+    .StaSize {
+        width: 120px;
+        height: 97.5px;
+    }
+
+        .StaSize:hover {
+            width: 132px;
+            height: 107.25px;
+        }
+
+    .ShoppingCart {
+        background-color: #9CD9C5;
+        width: 680px;
+        height: 250px;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50px; /*圓角*/
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        flex-wrap: wrap;
+        font-size: 100px;
+    }
+
+    #ShoppingCart .draggable-item { /*購物車內的圖片*/
+        width: auto;
+        height: auto;
+        max-width: 80px;
+        max-height: 110px;
+    }
+
+        #ShoppingCart .draggable-item:hover { /*購物車內的圖片*/
+            max-width: 88px;
+            max-height: 121px;
+        }
+
+    .dragged-image {
+        position: absolute;
+        pointer-events: none; /* 拖曳圖片，但原本的圖片不會消失*/
+    }
+
+    #Trolley { /*購物車圖示*/
+        width: 130px;
+        height: 130px;
+        position: absolute;
+        top: 79%;
+        left: 5%;
+    }
+
+    #Redd {
+        position: absolute;
+        top: 16%;
+        left: 20.5%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Greenn {
+        position: absolute;
+        top: 16%;
+        left: 40.5%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Bluee {
+        position: absolute;
+        top: 16%;
+        left: 59.5%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Blackk {
+        position: absolute;
+        top: 16%;
+        left: 78.5%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Siss {
+        position: absolute;
+        top: 62%;
+        left: 18%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Gluee {
+        position: absolute;
+        top: 62%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Corr {
+        position: absolute;
+        top: 62%;
+        left: 61%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Rulerr {
+        position: absolute;
+        top: 62%;
+        left: 81%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Correct1 {
+        position: absolute;
+        top: 86%;
+        left: 95%;
+        transform: translate(-50%, -50%);
+    }
+
+    #LeaveGame3 {
+        position: absolute;
+        top: 95%;
+        left: 90%;
+        width: 150px;
+        height: 40px;
+        transform: translate(-50%, -50%);
+    }
+}
+/*=====================================================================*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    #Clerk {
+        Height: 382.2px;
+        Width: 320.775px;
+        position: absolute;
+        top: 55%;
+        left: 26%;
+        transform: translate(-50%, -50%);
+    }
+
+    #TotalMoney {
+        font-size: 32.5px;
+        font-weight: bold;
+        position: absolute;
+        top: 6%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #TotalMoney2 {
+        color: darkred;
+    }
+
+    .Checkout { /*結帳區*/
+        Height: 149.5px;
+        Width: 292.5px;
+        position: absolute;
+        top: 79.5%;
+        left: 26%;
+        transform: translate(-50%, -50%);
+        border-radius: 20px; /*圓角*/
+        border: 10px dashed #301305; /*虛線外框*/
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        font-size: 60px;
+    }
+
+    #Correct2 {
+        width: 45.5px;
+        height: 30px;
+        position: absolute;
+        top: 95%;
+        left: 56%;
+        transform: translate(-50%, -50%);
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .Wallet {
+        background-image: url('images/game/game_wallet.png');
+        background-size: 302.8025px 242.06px;
+        Height: 242.06px;
+        Width: 302.8025px;
+        position: absolute;
+        top: 50%;
+        left: 74%;
+        transform: translate(-50%, -50%);
+        cursor: grab; /*小手手鼠標*/
+    }
+
+    #Thousand {
+        Height: 42.25px;
+        Width: 104px;
+        position: absolute;
+        top: 38%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #FiveHundred {
+        Height: 39px;
+        Width: 91px;
+        position: absolute;
+        top: 60%;
+        left: 32%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Hundred {
+        Height: 35.9125px;
+        Width: 87.75px;
+        position: absolute;
+        top: 60%;
+        left: 68%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Fifty {
+        Height: 45.5px;
+        Width: 45.5px;
+        position: absolute;
+        top: 80%;
+        left: 28%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Ten {
+        Height: 39px;
+        Width: 39px;
+        position: absolute;
+        top: 80%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Five {
+        Height: 32.5px;
+        Width: 32.5px;
+        position: absolute;
+        top: 80%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+    }
+
+    #One {
+        Height: 29.25px;
+        Width: 29.25px;
+        position: absolute;
+        top: 80%;
+        left: 73%;
+        transform: translate(-50%, -50%);
+    }
+}
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    #Clerk {
+        Height: 588px;
+        Width: 493.5px;
+        position: absolute;
+        top: 55%;
+        left: 26%;
+        transform: translate(-50%, -50%);
+    }
+
+    #TotalMoney {
+        font-size: 50px;
+        font-weight: bold;
+        position: absolute;
+        top: 6%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #TotalMoney2 {
+        color: darkred;
+    }
+
+    .Checkout { /*結帳區*/
+        Height: 230px;
+        Width: 450px;
+        position: absolute;
+        top: 79.5%;
+        left: 26%;
+        transform: translate(-50%, -50%);
+        border-radius: 20px; /*圓角*/
+        border: 10px dashed #301305; /*虛線外框*/
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        font-size: 80px;
+    }
+
+    #Correct2 {
+        width: 70px;
+        height: 40px;
+        position: absolute;
+        top: 95%;
+        left: 56%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .Wallet {
+        background-image: url('images/game/game_wallet.png');
+        background-size: 465.85px 372.4px;
+        Height: 372.4px;
+        Width: 465.85px;
+        position: absolute;
+        top: 50%;
+        left: 74%;
+        transform: translate(-50%, -50%);
+        cursor: grab; /*小手手鼠標*/
+    }
+
+    #Thousand {
+        Height: 65px;
+        Width: 160px;
+        position: absolute;
+        top: 38%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #FiveHundred {
+        Height: 60px;
+        Width: 140px;
+        position: absolute;
+        top: 60%;
+        left: 32%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Hundred {
+        Height: 55.25px;
+        Width: 135px;
+        position: absolute;
+        top: 60%;
+        left: 68%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Fifty {
+        Height: 70px;
+        Width: 70px;
+        position: absolute;
+        top: 80%;
+        left: 28%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Ten {
+        Height: 60px;
+        Width: 60px;
+        position: absolute;
+        top: 80%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+    }
+
+    #Five {
+        Height: 50px;
+        Width: 50px;
+        position: absolute;
+        top: 80%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+    }
+
+    #One {
+        Height: 45px;
+        Width: 45px;
+        position: absolute;
+        top: 80%;
+        left: 73%;
+        transform: translate(-50%, -50%);
+    }
+}
+/*====================買文具結束=================*/
+/* ----------------遊戲結束視窗------------------ */
+#resultModal .modal-dialog {
+    margin-top: 20%;
+    transform: translate(0, -50%);
+    max-width: 400px; /* 设置最大宽度 */
+    width: 80%; /* 设置宽度为父容器的百分比 */
+}
+
+#resultModal .modal-content {
+    width: 100%; /* 设置内容区域宽度为100% */
+    background-color: #9CD9C5;
+    border-radius: 15px; /* 圆角半径，根据需要进行调整 */
+    border: 3px solid teal; /* 边框宽度和颜色 */
+}
+
+#resultModal .modal-body {
+    text-align: center; /* 将文字置中 */
+    font-size: 40px;
+    margin-top: 20%;
+    font-weight: bold;
+    transform: translate(0, -20%);
+}
+
+#resultModal .modal-footer {
+    justify-content: center; /* 将按钮置中 */
+    border: none; /* 去除邊框 */
+}
+
+.JumpButton {
+    margin-bottom: 30px;
+    width: 100px;
+    height: 50px;
+}
+/* --------------遊戲結束視窗結束---------------- */
+/*------------------------------------小遊戲結束------------------------------------*/
+/*---------------遊戲介紹---------------------*/
+/* 手機 */
+@media only screen and (max-width: 1023px) {
+    .GameItdButton {
+        position: absolute;
+        top: 18%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .GameItdTitle {
+        color: darkcyan;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #itd_game1 {
+        Height: 214.5px;
+        Width: 390px;
+        position: absolute;
+        top: 46%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #itd_game2 {
+        Height: 214.5px;
+        Width: 390px;
+        position: absolute;
+        top: 46%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #itd_game31 {
+        Height: 214.5px;
+        Width: 351px;
+        position: absolute;
+        top: 46%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #itd_game32 {
+        Height: 214.5px;
+        Width: 351px;
+        position: absolute;
+        top: 46%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .GameLast {
+        font-size: 30px;
+        top: 40%;
+        left: 15%;
+        transform: translate(-50%, -50%);
+    }
+
+    .GameNext {
+        font-size: 30px;
+        top: 40%;
+        left: 85%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* 平板和電腦 */
+@media only screen and (min-width: 1024px) {
+    .GameItdButton {
+        position: absolute;
+        top: 18%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .GameItdTitle {
+        color: darkcyan;
+        font-size: 50px;
+        font-weight: bold;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #itd_game1 {
+        Height: 330px;
+        Width: 600px;
+        position: absolute;
+        top: 46%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #itd_game2 {
+        Height: 330px;
+        Width: 600px;
+        position: absolute;
+        top: 46%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #itd_game31 {
+        Height: 330px;
+        Width: 540px;
+        position: absolute;
+        top: 46%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #itd_game32 {
+        Height: 330px;
+        Width: 540px;
+        position: absolute;
+        top: 46%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .GameLast {
+        font-size: 40px;
+        top: 40%;
+        left: 15%;
+        transform: translate(-50%, -50%);
+    }
+
+    .GameNext {
+        font-size: 40px;
+        top: 40%;
+        left: 85%;
+        transform: translate(-50%, -50%);
+    }
+}
